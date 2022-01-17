@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    
+    <section class="d-sm-flex">
+
+        <div class="col-sm-2 pt-3" style="background-color: #FAFFC1;">
+            <h4 class="container fw-bold border-start border-5 border-info ms-4">E-classe</h4>
+            <div>
+                <div class="text-center mt-sm-5 pt-3">
+                    <img src="youcode.png" class="rounded-circle mb-3 col-sm-6" alt="img-user">
+                    <h5 class="fw-bold fs-6">Admin name</h5>
+                    <h6 class="text-info">Admin</h6>
+                </div>
+                <ul class="nav nav-pills d-flex flex-sm-column justify-content-center mt-sm-5 w-50 w-sm-50 mx-auto">
+                    <li class=""><a class="ps-0 w-sm-50 text-dark btn btn-outline-primary border-0" href=""><i class="bi bi-house-door mx-3"></i><span class="d-none d-sm-inline">Home</span></a></li>
+                    <li><a class="ps-0 text-dark btn btn-outline-primary border-0 my-sm-2" href="#"><i class="bi bi-bookmark mx-3"></i><span class="d-none d-sm-inline">Course</span></a></li>
+                    <li><a class="ps-0 text-dark btn btn-outline-primary border-0" href=""><i class="bi bi-mortarboard mx-3"></i><span class="d-none d-sm-inline">Students</span></a></li>
+                    <li><a class="ps-0 text-dark btn btn-outline-primary border-0 my-sm-2" href=""><i class="bi bi-currency-dollar mx-3"></i><span class="d-none d-sm-inline">Payment</span></a></li>
+                    <li><a class="ps-0 text-dark btn btn-outline-primary border-0" href=""><i class="bi bi-file-earmark-bar-graph mx-3"></i><span class="d-none d-sm-inline">Report</span></a></li>
+                    <li><a class="ps-0 text-dark btn btn-outline-primary border-0 mb-2 my-sm-2" href=""><i class="bi bi-sliders mx-3"></i><span class="d-none d-sm-inline">Settings</span></a></li>
+                    <li><a class="ps-0 text-dark btn btn-outline-primary border-0 mt-sm-5 mb-3" href=""><span class="d-none d-sm-inline">Logout</span><i class="bi bi-box-arrow-right ms-4"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-10 mb-5">
+
+            <div class="pt-2 px-3 d-flex justify-content-between shadow-sm" style="background-color: #FFFFFF;">
+                <button class="btn" type="button"><i class="bi bi-caret-left text-secondary"></i></button>
+                <div>
+                    <div class="btn-group border mb-1 align-items-center" style="border-radius: 8px;">
+                        <input class="border-0" type="recheche" placeholder="Search...">
+                        <button class="btn" type="button"><i class="bi bi-search"></i></button>
+                    </div>                    
+                    <i class="bi bi-bell text-secondary me-4 btn"></i>
+                </div>
+            </div>
+
+
+            <div class="row mt-5 mx-3">
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="h-100 px-2 py-3" style="background-color: #F0F9FF; border-radius: 8px;">
+                        <h1><i class="bi bi-mortarboard" style="color: #74C1ED;"></i></h1>
+                        <p>Students</p>
+                        <h3 class="float-end">243</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="h-100 px-2 py-3" style="background-color: #FEF6FB; border-radius: 8px;">
+                        <h1><i class="bi bi-bookmark" style="color: #EE95C5;"></i></h1>
+                        <p>Course</p>
+                        <h3 class="float-end">13</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="h-100 px-2 py-4" style="background-color: #FEFBEC; border-radius: 8px;">
+                        <h3><i class="bi bi-currency-dollar" style="color: #00C1FE; border: 3px solid #00C1FE;"></i></h3>
+                        <p>Payments</p>
+                        <div class="d-lg-flex align-items-center float-end">
+                            <h6>DHS</h6><h3>556,000</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-6 mb-3">
+                    <div class="h-100 px-2 py-3" style="background-image: linear-gradient(120deg,#00C1FE,#FAFFC1); border-radius: 8px;">
+                        <h1><i class="bi bi-person text-light"></i></h1>
+                        <p class="text-light">User</p>
+                        <h3 class="float-end">3</h3>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+</body>
+</html>
