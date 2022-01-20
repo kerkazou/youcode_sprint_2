@@ -19,7 +19,7 @@
                 <input type="email" placeholder="Enter your email" class=" w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                 <label class="d-block mt-4 text-secondary" for="">Password</label>
                 <input type="password" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
-                <a type="button" class="btn text-white w-100 mt-5" href="Dashboard.html" style="background-color: #00C1FE;">SIN IN</a>
+                <a type="button" class="btn text-white w-100 mt-5" href="Dashboard.php" style="background-color: #00C1FE;">SIN IN</a>
                 <p class="mt-4 text-center">Forget your password? <span class="btn btn-link" style="color: #00C1FE;">Reset Password</span></p>
             </form>
         </div>
