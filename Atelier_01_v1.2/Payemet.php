@@ -11,11 +11,11 @@
 <body>
     <section class="d-sm-flex" style="background-color: #F8F8F8;">
 
-      <div class="col-sm-2 pt-3" style="background-color: #FAFFC1;">
+        <div class="col-sm-2 pt-3" style="background-color: #FAFFC1;">
             <?php // sidebar
                 include 'sidebar.php'
             ?>
-    </div>
+        </div>
 
         <div class="col-md-10 mb-5">
 
@@ -27,10 +27,57 @@
 
 
             <div class="mt-3 mx-4">
-                <?php // navb
-                    include 'Payment-detai.php'
-                ?>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="fw-bold">Payment Details</h4>
+                    <div class="d-flex">
+                    <div class="d-flex flex-column btn btn-sm">
+                        <i class="bi bi-caret-up p-0 text-info"></i>
+                        <i class="bi bi-caret-down p-0 text-info"></i>
+                    </div>
+                </div>
             </div>
+            <hr>
+            <div class="overflow-auto" style="width: 100%;">
+                <table class="table table-borderless table-striped" style="min-width: 1200px;">
+                    <thead>
+                        <tr class="text-secondary">
+                            <th class="fw-normal h6">Name</th>
+                            <th class="fw-normal h6">Payment Schedule</th>
+                            <th class="fw-normal h6">Bill Number</th>
+                            <th class="fw-normal h6">Amount Paid</th>
+                            <th class="fw-normal h6">Balance Amount</th>
+                            <th class="fw-normal h6">Date</th>
+                            <th class="fw-normal h6"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                            $payement = [
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                            ];
+                            foreach ($payement as $key => $payement){
+                                echo "<tr>
+                                        <td>".$payement['Name']."</td>
+                                        <td>".$payement['Payment']."</td>
+                                        <td>".$payement['Bill']."</td>
+                                        <td>".$payement['Amount']."</td>
+                                        <td>".$payement['Balance']."</td>
+                                        <td>".$payement['Date']."</td>
+                                        <td>".$payement['icon']."</td>
+                                    </tr>";
+                            }
+                        ?>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            
 
         </div>
 
