@@ -56,73 +56,17 @@
                         <tbody style="LINE-HEIGHT:50px">
 
                             <?php
-                                $payement = [
-                                    array(
-                                        'img'=>'<img style="width: 50%;" src="student.png" alt="">' ,
-                                        'Name'=> 'username' ,
-                                        'Email'=>'user@email.com' ,
-                                        'Phone'=>'7305477760' ,
-                                        'Enroll'=>'1234567305477760' ,
-                                        'Date'=>'08-Dec, 2021'
-                                        ),
-                                    array(
-                                        'img'=>'<img style="width: 50%;" src="student.png" alt="">' ,
-                                        'Name'=> 'username' ,
-                                        'Email'=>'user@email.com' ,
-                                        'Phone'=>'7305477760' ,
-                                        'Enroll'=>'1234567305477760' ,
-                                        'Date'=>'08-Dec, 2021'
-                                        ),
-                                    array(
-                                        'img'=>'<img style="width: 50%;" src="student.png" alt="">' ,
-                                        'Name'=> 'username' ,
-                                        'Email'=>'user@email.com' ,
-                                        'Phone'=>'7305477760' ,
-                                        'Enroll'=>'1234567305477760' ,
-                                        'Date'=>'08-Dec, 2021'
-                                    ),
-                                    array(
-                                        'img'=>'<img style="width: 50%;" src="student.png" alt="">' ,
-                                        'Name'=> 'username' ,
-                                        'Email'=>'user@email.com' ,
-                                        'Phone'=>'7305477760' ,
-                                        'Enroll'=>'1234567305477760' ,
-                                        'Date'=>'08-Dec, 2021'
-                                        ),
-                                    array(
-                                        'img'=>'<img style="width: 50%;" src="student.png" alt="">' ,
-                                        'Name'=> 'username' ,
-                                        'Email'=>'user@email.com' ,
-                                        'Phone'=>'7305477760' ,
-                                        'Enroll'=>'1234567305477760' ,
-                                        'Date'=>'08-Dec, 2021'
-                                        ),
-                                    array(
-                                        'img'=>'<img style="width: 50%;" src="student.png" alt="">' ,
-                                        'Name'=> 'username' ,
-                                        'Email'=>'user@email.com' ,
-                                        'Phone'=>'7305477760' ,
-                                        'Enroll'=>'1234567305477760' ,
-                                        'Date'=>'08-Dec, 2021'
-                                        ),
-                                    array(
-                                        'img'=>'<img style="width: 50%;" src="student.png" alt="">' ,
-                                        'Name'=> 'username' ,
-                                        'Email'=>'user@email.com' ,
-                                        'Phone'=>'7305477760' ,
-                                        'Enroll'=>'1234567305477760' ,
-                                        'Date'=>'08-Dec, 2021'
-                                        ),
-                                ];
-                                foreach ($payement as $key => $payement){
+                                $Data = file_get_contents('Students-list.json');
+                                $student = json_decode($Data,true);
+                                foreach ($student as $key => $student){
                                     echo "<tr>
                                             <tr><td></td></tr>
-                                            <td class='bg-white'>".$payement['img']."</td>
-                                            <td class='bg-white'>".$payement['Name']."</td>
-                                            <td class='bg-white'>".$payement['Email']."</td>
-                                            <td class='bg-white'>".$payement['Phone']."</td>
-                                            <td class='bg-white'>".$payement['Enroll']."</td>
-                                            <td class='bg-white'>".$payement['Date']."</td>
+                                            <td class='bg-white'><img style='width: 50%;' src='student.png' alt=''></td>
+                                            <td class='bg-white'>".$student['Name']."</td>
+                                            <td class='bg-white'>".$student['Email']."</td>
+                                            <td class='bg-white'>".$student['Phone']."</td>
+                                            <td class='bg-white'>".$student['Enroll']."</td>
+                                            <td class='bg-white'>".$student['Date']."</td>
                                             <td class='bg-white'>
                                                 <div class='d-flex justify-content-around'>
                                                     <i class='bi bi-pencil btn text-info'></i>

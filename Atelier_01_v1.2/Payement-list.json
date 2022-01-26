@@ -1,0 +1,34 @@
+[
+    {
+        "Name" : "Karthi" ,
+        "Payment" :  "First" ,
+        "Bill" : "00012223" ,
+        "Amount" : "DHS 100,000" ,
+        "Balance" : "DHS 500,000" ,
+        "Date" : "05-Jan, 2022"
+    },
+    {
+        "Name" : "Karthi" ,
+        "Payment" :  "First" ,
+        "Bill" : "00012223" ,
+        "Amount" : "DHS 100,000" ,
+        "Balance" : "DHS 500,000" ,
+        "Date" : "05-Jan, 2022"
+    },
+    {
+        "Name" : "Karthi" ,
+        "Payment" :  "First" ,
+        "Bill" : "00012223" ,
+        "Amount" : "DHS 100,000" ,
+        "Balance" : "DHS 500,000" ,
+        "Date" : "05-Jan, 2022"
+    },
+    {
+        "Name" : "Karthi" ,
+        "Payment" :  "First" ,
+        "Bill" : "00012223" ,
+        "Amount" : "DHS 100,000" ,
+        "Balance" : "DHS 500,000" ,
+        "Date" : "05-Jan, 2022"
+    }
+]

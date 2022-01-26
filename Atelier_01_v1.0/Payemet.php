@@ -53,8 +53,12 @@
                     <tbody>
 
                         <?php
-                            $Data = file_get_contents('Payement-list.json');
-                            $payement = json_decode($Data,true);
+                            $payement = [
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                                array('Name'=>'Karthi' , 'Payment'=> 'First' , 'Bill'=>'00012223' , 'Amount'=>'DHS 100,000' , 'Balance'=>'DHS 500,000' , 'Date'=>'05-Jan, 2022' , 'icon'=>'<i class="bi bi-eye btn btn-sm text-info"></i>'),
+                            ];
                             foreach ($payement as $key => $payement){
                                 echo "<tr>
                                         <td>".$payement['Name']."</td>
@@ -63,7 +67,7 @@
                                         <td>".$payement['Amount']."</td>
                                         <td>".$payement['Balance']."</td>
                                         <td>".$payement['Date']."</td>
-                                        <td><i class='bi bi-eye btn btn-sm text-info'></i></td>
+                                        <td>".$payement['icon']."</td>
                                     </tr>";
                             }
                         ?>
