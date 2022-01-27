@@ -34,8 +34,8 @@
                             <i class="bi bi-caret-up btn btn-sm p-0 text-info"></i>
                             <i class="bi bi-caret-down btn btn-sm p-0 text-info"></i>
                         </div>
-                        <button class="btn text-light px-4 btn-info" style="background-color: #00C1FE;" type="button">ADD NEW STUDENT</button>
-                    </div>
+                        <a class="btn text-light px-4 btn-info" href="add-student.php" id="add" name="add" style="background-color: #00C1FE;" type="button">ADD NEW STUDENT</a>
+                </div>
                 </div>
 
                 <hr>
@@ -54,7 +54,6 @@
                             </tr>
                         </thead>
                         <tbody style="LINE-HEIGHT:50px">
-
                             <?php
                                 $Data = file_get_contents('Students-list.json');
                                 $student = json_decode($Data,true);
