@@ -9,7 +9,7 @@
     <title>Payement</title>
 </head>
 <body>
-    <section class="d-sm-flex" style="background-color: #F8F8F8;">
+    <section class="d-sm-flex overflow-hidden" style="background-color: #F8F8F8;">
 
         <div class="col-sm-2 pt-3" style="background-color: #FAFFC1;">
             <?php // sidebar

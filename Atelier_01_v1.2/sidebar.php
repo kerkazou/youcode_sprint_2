@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <title>Dashboard</title>
-</head>
-<body>
-
-    <h4 class="container fw-bold border-start border-5 border-info ms-4">E-classe</h4>
+<h4 class="container fw-bold border-start border-5 border-info ms-4">E-classeX</h4>
     <div>
         <div class="text-center mt-sm-5 pt-3">
             <img src="youcode.png" class="rounded-circle mb-3 col-sm-6" alt="img-user">
@@ -27,6 +15,3 @@
             <li><a class="ps-0 text-dark btn btn-outline-primary border-0 mt-sm-5 mb-3" href="index.php"><span class="d-none d-sm-inline">Logout</span><i class="bi bi-box-arrow-right ms-4"></i></a></li>
         </ul>
     </div>
-
-</body>
-</html>

@@ -9,7 +9,7 @@
     <title>student</title>
 </head>
 <body>
-    <section class="d-sm-flex" style="background-color: #F8F8F8;">
+    <section class="d-sm-flex overflow-hidden" style="background-color: #F8F8F8;">
 
         <div class="col-sm-2 pt-3" style="background-color: #FAFFC1;">
             <?php // sidebar
@@ -114,7 +114,7 @@
                                         'Date'=>'08-Dec, 2021'
                                         ),
                                 ];
-                                foreach ($payement as $key => $payement){
+                                foreach ($payement as $payement){
                                     echo "<tr>
                                             <tr><td></td></tr>
                                             <td class='bg-white'>".$payement['img']."</td>

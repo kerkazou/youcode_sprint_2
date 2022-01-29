@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <title>student</title>
 </head>
-<body>
-    <section class="d-sm-flex" style="background-color: #F8F8F8;">
+<body style="margin: 0px;">
+    <section class="d-sm-flex overflow-hidden" style="background-color: #F8F8F8;">
 
-        <div class="col-sm-2 pt-3" style="background-color: #FAFFC1;">
+        <div class="col-sm-2 pt-3" style="background-color: #FAFFC1; width: 100%;">
             <?php // sidebar
                 include 'sidebar.php'
             ?>
@@ -40,8 +40,8 @@
 
                 <hr>
 
-                <div class="overflow-auto" style="width: 100%;">
-                    <table class="table table-borderless" style="min-width: 1200px;">
+                <div class="overflow-auto" style="width: 100%; height:550px">
+                    <table class="table table-borderless" style="min-width: 1200px; max-height: 500px;">
                         <thead>
                             <tr class="text-secondary">
                                 <td class="col-1"></td>
@@ -69,11 +69,21 @@
                                             <td class='bg-white'>
                                                 <div class='d-flex justify-content-around'>
                                                     <i class='bi bi-pencil btn text-info'></i>
-                                                    <i class='bi bi-trash btn text-info'></i>
+                                                    <i class='bi bi-trash btn text-info name='Delet''></i>
                                                 </div>
                                             </td>
                                         </tr>";
                                 }
+                                /*
+                                    if(isset($student['Delet'])){
+                                        $Delet = $_POST['Delet'];
+                                        $Data = file_get_contents('Student-list.json');
+                                        $Data = json_decode($Data);
+                                        unset($Data[$Delet]);
+                                        $Data = json_encode($Data);
+                                        file_put_contents('Student-list.json', $Data);
+                                    }
+                                */
                             ?>
 
                         </tbody>

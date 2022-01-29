@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <section class="d-sm-flex">
+    <section class="d-sm-flex overflow-hidden">
 
         <div class="col-sm-2 pt-3" style="background-color: #FAFFC1;">
             <?php // sidebar
