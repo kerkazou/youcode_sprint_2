@@ -39,46 +39,28 @@
                 </div>
                 <hr>
                 <?php
-                    $edit_student = [
-                        "id" => "",
-                        "Name" => "",
-                        "Email" => "",
-                        "Phone" => "",
-                        "Enroll" => "",
-                        "Date" => ""
-                    ];
+                    $edit_student =false;
+                    $key;
                     if (isset($_GET['id'])) {
                         $Data = file_get_contents('students-list.json');
                         $students = json_decode($Data,true);
-                        foreach($students as $student){
+                        foreach($students as $k=> $student){
                             if($student['id'] == $_GET['id']){
                                 $edit_student = $student;
+                                $key=$k;
                                 break;
                             }
                         }
                     }
-                ?>
-
-                <div class="overflow-auto" style="width: 100%;">
-                    <form method="POST" class="w-75 container" action="">
-                        <input class="form-control my-3" name="Name" value="<?php echo $edit_student['Name'];?>" placeholder="Name" type="text" required>
-                        <input class="form-control my-3" name="Email" value="<?php echo $edit_student['Email'];?>" placeholder="Email" type="text" required>
-                        <input class="form-control my-3" name="Phone" value="<?php echo $edit_student['Phone'];?>" placeholder="Phone" type="text" required>
-                        <input class="form-control my-3" name="Enroll" value="<?php echo $edit_student['Enroll'];?>" placeholder="Enroll" type="text" required>
-                        <input class="form-control my-3" name="Date" value="<?php echo $edit_student['Date'];?>" placeholder="Date" type="date" required>
-                        <div class="d-flex justify-content-evenly">
-                            <button class="form-control btn-info my-3 w-25" name="Yes" type="submit">Yes</button>
-                            <button class="form-control btn-info my-3 w-25" name="No" type="submit">No</button>
-                        </div>
-                    </form>
-                </div>
-                <?php
+                    if(!$edit_student){
+                        die('student not found!');
+                    }
 
                     if (isset($_POST['Yes'])) {
                         $data = file_get_contents('Students-list.json');
                         $students = json_decode($data,true);
                         if($student['id'] == $_GET['id']){
-                            unset($Data[$students]);
+                            unset($students[$key]);
                         }
                         $Data = json_encode($students , JSON_PRETTY_PRINT);
                         file_put_contents('Students-list.json', $Data);
@@ -95,33 +77,21 @@
                             </script>
                         ";
                     }
-
-                    /*if(!empty($_POST['Name']) && !empty($_POST['Email']) && !empty($_POST['Phone']) && !empty($_POST['Enroll']) && !empty($_POST['Date'])){
-                        $data = file_get_contents('Students-list.json');
-                        $students = json_decode($data,true);
-                        $edit_student = [
-                            "id" => $_POST['id'],
-                            "Name" => $_POST['Name'],
-                            "Email" => $_POST['Email'],
-                            "Phone" => $_POST['Phone'],
-                            "Enroll" => $_POST['Enroll'],
-                            "Date" => $_POST['Date']
-                        ];
-                        foreach($students as $key => $student){
-                            if($student['id'] == $_GET['id']){
-                                $students[$key] = $edit_student;
-                                break;
-                            }
-                        }
-                        $Data = json_encode($students , JSON_PRETTY_PRINT);
-                        file_put_contents('Students-list.json', $Data);
-                        echo "
-                            <script>
-                                window.location.href = 'Students.php';
-                            </script>
-                        ";
-                    }*/
                 ?>
+
+                <div class="overflow-auto" style="width: 100%;">
+                    <form method="POST" class="w-75 container" action="">
+                        <input class="form-control my-3" name="Name" value="<?php echo $edit_student['Name'];?>" placeholder="Name" type="text" required>
+                        <input class="form-control my-3" name="Email" value="<?php echo $edit_student['Email'];?>" placeholder="Email" type="text" required>
+                        <input class="form-control my-3" name="Phone" value="<?php echo $edit_student['Phone'];?>" placeholder="Phone" type="text" required>
+                        <input class="form-control my-3" name="Enroll" value="<?php echo $edit_student['Enroll'];?>" placeholder="Enroll" type="text" required>
+                        <input class="form-control my-3" name="Date" value="<?php echo $edit_student['Date'];?>" placeholder="Date" type="date" required>
+                        <div class="d-flex justify-content-evenly">
+                            <button class="form-control btn-info my-3 w-25" name="Yes" type="submit">Yes</button>
+                            <button class="form-control btn-info my-3 w-25" name="No" type="submit">No</button>
+                        </div>
+                    </form>
+                </div>
 
 
             </div>
