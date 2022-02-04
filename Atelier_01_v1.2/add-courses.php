@@ -2,18 +2,16 @@
     include 'connect.php';
     if (isset($_POST['add'])){
         $name = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $enroll = $_POST['enroll'];
+        $distributed = $_POST['distributed'];
         $date = $_POST['date'];
-        $query = "INSERT INTO students (name,email,phone,enroll,date) value ('$name','$email','$phone','$enroll','$date')";
-        $student = mysqli_query($connect , $query);
-        if (!$student){
+        $query = "INSERT INTO courses (name,distributed,date) value ('$name','$distributed','$date')";
+        $courses = mysqli_query($connect , $query);
+        if (!$courses){
             die('error!');
         }
         echo "
             <script>
-                window.location.href = 'Students.php';
+                window.location.href = 'courses.php';
             </script>
         ";
     }
@@ -48,15 +46,13 @@
 
             <div class="mt-3 mx-4">
 
-                <h4 class="fw-bold">Add Students</h4>
+                <h4 class="fw-bold">Add Courses</h4>
                 <hr>
 
                 <div class="overflow-auto" style="width: 100%;">
                     <form method="POST" class="w-75 container" action="">
                         <input class="form-control my-3" name="name" placeholder="Name" type="text" required>
-                        <input class="form-control my-3" name="email" placeholder="Email" type="text" required>
-                        <input class="form-control my-3" name="phone" placeholder="Phone" type="text" required>
-                        <input class="form-control my-3" name="enroll" placeholder="Enroll" type="text" required>
+                        <input class="form-control my-3" name="distributed" placeholder="Distributed By" type="text" required>
                         <input class="form-control my-3" name="date" placeholder="Date" type="date" required>
                         <button class="form-control btn-info my-3" type="submit" name="add">Submit<i class="bi bi-telegram"></i></button>
                     </form>

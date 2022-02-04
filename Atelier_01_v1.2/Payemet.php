@@ -52,21 +52,33 @@
                     </thead>
                     <tbody>
 
-                        <?php
-                            $Data = file_get_contents('Payement-list.json');
-                            $payement = json_decode($Data,true);
-                            foreach ($payement as $key => $payement){
-                                echo "<tr>
-                                        <td>".$payement['Name']."</td>
-                                        <td>".$payement['Payment']."</td>
-                                        <td>".$payement['Bill']."</td>
-                                        <td>".$payement['Amount']."</td>
-                                        <td>".$payement['Balance']."</td>
-                                        <td>".$payement['Date']."</td>
-                                        <td><i class='bi bi-eye btn btn-sm text-info'></i></td>
-                                    </tr>";
+                    <?php
+                        include 'connect.php';
+                        $query = "SELECT * FROM payment";
+                        $payment = mysqli_query($connect , $query);
+                        if ($payment){
+                            while ($row = mysqli_fetch_assoc($payment)){
+                                $id = $row['id'];
+                                $name = $row['name'];
+                                $payment = $row['payment'];
+                                $bill = $row['bill'];
+                                $amount = $row['amount'];
+                                $balance = $row['balance'];
+                                $date = $row['date'];
+
+                                echo '<tr>
+                                        <tr><td></td></tr>
+                                        <td>'.$name.'</td>
+                                        <td>'.$payment.'</td>
+                                        <td>'.$amount.'</td>
+                                        <td>'.$bill.'</td>
+                                        <td>'.$balance.'</td>
+                                        <td>'.$date.'</td>
+                                        <td><td><i class="bi bi-eye btn btn-sm text-info"></i></td>  
+                                    </tr>';
                             }
-                        ?>
+                        }
+                    ?>
 
                     </tbody>
                 </table>

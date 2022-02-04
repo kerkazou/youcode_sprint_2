@@ -1,3 +1,7 @@
+<?php
+    include 'connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,14 +33,14 @@
             <div class="mt-3 mx-4">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="fw-bold">Students List</h4>
-                    <form method="POST" class="d-flex">
-                        <div name="order" class="d-flex flex-column me-4">
+                    <h4 class="fw-bold">Courses</h4>
+                    <div class="d-flex">
+                        <div class="d-flex flex-column me-4">
                             <i class="bi bi-caret-up btn btn-sm p-0 text-info"></i>
                             <i class="bi bi-caret-down btn btn-sm p-0 text-info"></i>
                         </div>
-                        <a class="btn text-light px-4 btn-info" href="add-student.php" style="background-color: #00C1FE;" type="button">ADD NEW STUDENT</a>
-                    </form>
+                        <a class="btn text-light px-4 btn-info" href="add-courses.php" style="background-color: #00C1FE;" type="button">ADD NEW COURSES</a>
+                </div>
                 </div>
 
                 <hr>
@@ -45,42 +49,33 @@
                     <table class="table table-borderless" style="min-width: 1200px; max-height: 500px;">
                         <thead>
                             <tr class="text-secondary">
-                                <td class="col-1"></td>
-                                <td class="col-2">Name</td>
-                                <td class="col-2">Email</td>
-                                <td class="col-2">Phone</td>
-                                <td class="col-2">Enroll Number</td>
-                                <td class="col-2">Date of admissin</td>
-                                <td class="col-1"></td>
+                                <td class="col-4">Name of course</td>
+                                <td class="col-4">Distributed By</td>
+                                <td class="col-2">Date</td>
+                                <td class="col-2"></td>
                             </tr>
                         </thead>
                         <tbody style="LINE-HEIGHT:50px">
                             
                             <?php
-                                include 'connect.php';
-                                $query = "SELECT * FROM students";
-                                $student = mysqli_query($connect , $query);
-                                if ($student){
-                                    while ($row = mysqli_fetch_assoc($student)){
+                                $query = "SELECT * FROM courses";
+                                $courses = mysqli_query($connect , $query);
+                                if ($courses){
+                                    while ($row = mysqli_fetch_assoc($courses)){
                                         $id = $row['id'];
                                         $name = $row['name'];
-                                        $email = $row['email'];
-                                        $phone = $row['phone'];
-                                        $enroll = $row['enroll'];
+                                        $distributed = $row['distributed'];
                                         $date = $row['date'];
 
                                         echo '<tr>
                                                 <tr><td></td></tr>
-                                                <td class="bg-white"><img style="width: 50%;" src="student.png" alt=""></td>
                                                 <td class="bg-white">'.$name.'</td>
-                                                <td class="bg-white">'.$email.'</td>
-                                                <td class="bg-white">'.$phone.'</td>
-                                                <td class="bg-white">'.$enroll.'</td>
+                                                <td class="bg-white">'.$distributed.'</td>
                                                 <td class="bg-white">'.$date.'</td>
                                                 <td class="bg-white">
                                                     <div class="d-flex justify-content-around">
-                                                        <a href="edit-student.php?id='.$id.'"><i class="bi bi-pencil btn text-info"></i></a>
-                                                        <a href="delet-student.php?id='.$id.'" name="delet_student"><i class="bi bi-trash btn text-info"></i></a>
+                                                        <a href="edit-courses.php?id='.$id.'"><i class="bi bi-pencil btn text-info"></i></a>
+                                                        <a href="delet-courses.php?id='.$id.'" name="delet_student"><i class="bi bi-trash btn text-info"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>';

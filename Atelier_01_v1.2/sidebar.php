@@ -7,7 +7,7 @@
         </div>
         <ul class="nav nav-pills d-flex flex-sm-column justify-content-center mt-sm-5 w-50 w-sm-50 mx-auto">
             <li class=""><a class="ps-0 w-sm-50 text-dark btn btn-outline-primary border-0 <?php if(basename($_SERVER['REQUEST_URI'])=='Dashboard.php') echo'bg-info'; ?>" href="Dashboard.php"><i class="bi bi-house-door mx-3"></i><span class="d-none d-sm-inline">Home</span></a></li>
-            <li><a class="ps-0 text-dark btn btn-outline-primary border-0 my-sm-2" href="#"><i class="bi bi-bookmark mx-3"></i><span class="d-none d-sm-inline">Course</span></a></li>
+            <li><a class="ps-0 text-dark btn btn-outline-primary border-0 my-sm-2" href="courses.php"><i class="bi bi-bookmark mx-3"></i><span class="d-none d-sm-inline">Course</span></a></li>
             <li><a class="ps-0 text-dark btn btn-outline-primary border-0 <?php if(basename($_SERVER['REQUEST_URI'])=='Students.php') echo'bg-info'; ?> " href="Students.php"><i class="bi bi-mortarboard mx-3"></i><span class="d-none d-sm-inline">Students</span></a></li>
             <li><a class="ps-0 text-dark btn btn-outline-primary border-0 my-sm-2 <?php if(basename($_SERVER['REQUEST_URI'])=='Payemet.php') echo'bg-info'; ?> " href="Payemet.php"><i class="bi bi-currency-dollar mx-3"></i><span class="d-none d-sm-inline">Payment</span></a></li>
             <li><a class="ps-0 text-dark btn btn-outline-primary border-0" href="#"><i class="bi bi-file-earmark-bar-graph mx-3"></i><span class="d-none d-sm-inline">Report</span></a></li>
