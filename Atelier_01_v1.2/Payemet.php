@@ -55,9 +55,9 @@
                     <?php
                         include 'connect.php';
                         $query = "SELECT * FROM payment";
-                        $payment = mysqli_query($connect , $query);
-                        if ($payment){
-                            while ($row = mysqli_fetch_assoc($payment)){
+                        $payments = mysqli_query($connect , $query);
+                        if ($payments){
+                            while ($row = mysqli_fetch_assoc($payments)){
                                 $id = $row['id'];
                                 $name = $row['name'];
                                 $payment = $row['payment'];
@@ -67,7 +67,6 @@
                                 $date = $row['date'];
 
                                 echo '<tr>
-                                        <tr><td></td></tr>
                                         <td>'.$name.'</td>
                                         <td>'.$payment.'</td>
                                         <td>'.$amount.'</td>

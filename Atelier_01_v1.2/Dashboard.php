@@ -64,7 +64,20 @@
                         <h3><i class="bi bi-currency-dollar" style="color: #00C1FE; border: 3px solid #00C1FE;"></i></h3>
                         <p>Payments</p>
                         <div class="d-lg-flex align-items-center float-end">
-                            <h6>DHS</h6><h3>0,000</h3>
+                            <h6>DHS</h6><h3>
+                                <?php
+                                    $query = "SELECT * FROM payment";
+                                    $result = mysqli_query($connect , $query);
+                                    $sum_payment = 0;
+                                    if ($result){
+                                        while ($row = mysqli_fetch_assoc($result)){
+                                            $payment = $row['amount'];
+                                            $sum_payment = $payment + $sum_payment;
+                                        }
+                                    }
+                                    echo $sum_payment;
+                                ?>
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -72,7 +85,14 @@
                     <div class="h-100 px-2 py-3" style="background-image: linear-gradient(120deg,#00C1FE,#FAFFC1); border-radius: 8px;">
                         <h1><i class="bi bi-person text-light"></i></h1>
                         <p class="text-light">User</p>
-                        <h3 class="float-end">0</h3>
+                        <h3 class="float-end">
+                        <?php
+                            $query = "SELECT * FROM students";
+                            $query_run = mysqli_query($connect,$query);
+                            $row = mysqli_num_rows($query_run);
+                            echo $row ;
+                        ?>
+                        </h3>
                     </div>
                 </div>
 
