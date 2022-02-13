@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
+    if(!isset($_COOKIE['email']) && !isset($_COOKIE['password'])){
         header("location:index.php");
     }else{}
     if (isset($_POST['add'])){

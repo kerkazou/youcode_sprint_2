@@ -10,5 +10,11 @@
         $_SESSION['username'] = $compte['username'];
         $_SESSION['id'] = $compte['id'];
         header("location:Dashboard.php");
+    }else{
+        header("location:index.php");
+    }
+    if(isset($_POST['checked'])){
+        setcookie('email' , $_SESSION['email'] , time() + 60*60*24 , null , null , false , true);
+        setcookie('password' , $_SESSION['password'] , time() + 60*60*24 , null , null , false , true);
     }
 ?>

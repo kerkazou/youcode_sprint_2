@@ -7,7 +7,7 @@
                     if(isset($_SESSION['email'])){
                         echo $_SESSION['username'];
                     }else{
-                        echo"Admin name";
+                        header("location:index.php");
                     }
                 ?>
             </h5>
