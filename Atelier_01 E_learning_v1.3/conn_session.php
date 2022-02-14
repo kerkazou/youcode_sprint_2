@@ -9,9 +9,11 @@
         $_SESSION['password'] = $_POST['password'];
         $_SESSION['username'] = $compte['username'];
         $_SESSION['id'] = $compte['id'];
+        setcookie('email' , $_SESSION['email'] , time() + 60*60 , null , null , false , true);
+        setcookie('password' , $_SESSION['password'] , time() + 60*60 , null , null , false , true);
         header("location:Dashboard.php");
     }else{
-        header("location:index.php");
+        header("location:index.php?error=Your email or password is incorrect");
     }
     if(isset($_POST['checked'])){
         setcookie('email' , $_SESSION['email'] , time() + 60*60*24 , null , null , false , true);

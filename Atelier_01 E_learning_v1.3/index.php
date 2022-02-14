@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <title>Sign in</title>
 </head>
 <body>
@@ -13,7 +14,18 @@
         <div class="container bg-white col-md-4 p-4 mt-5" style="border-radius: 20px;">
             <h1 class="border-start border-5 border-primary">E-classe</h1>
             <h3 class="text-center mt-4">SIGN IN</h3>
-            <p class="text-center text-secondary">Enter your credentials to access your account</p>
+            <?php
+                if(isset($_GET['error'])){
+                    echo '
+                        <div class="alert alert-danger d-flex align-items-center p-1" role="alert">
+                            <h2 class="bi bi-exclamation-triangle flex-shrink-0 mx-3" width="24" height="24"></h2>
+                            <div>Your email or password is incorrect, <br>Enter your credentials to access your account</div>
+                        </div>
+                    ';
+                }else{
+                    echo'<p class="text-center text-secondary">Enter your credentials to access your account</p>';
+                }
+            ?>
             <form method="POST" action="conn_session.php">
                 <label class="d-block mt-4 text-secondary" for="">Email</label>
                 <input type="email" name="email" placeholder="Enter your email" value="<?php if(isset($_COOKIE['email'])) echo $_COOKIE['email'] ?>" class=" w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label" required>
