@@ -60,6 +60,7 @@
                         <tbody style="LINE-HEIGHT:50px">
                             
                             <?php
+                                include "connect.php";
                                 $query = "SELECT * FROM courses";
                                 $courses = mysqli_query($connect , $query);
                                 if ($courses){
